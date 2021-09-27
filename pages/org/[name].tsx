@@ -97,9 +97,11 @@ export const OrgDetails = ({
               <Members login={login} />
             </dd>
             <dd className="mt-12">
-              Based in{' '}
+              Based out of{' '}
               <span className="text-blue-800 font-semibold">
-                {location}
+                {location && location.length > 0
+                  ? location
+                  : 'Planet Earth'}
               </span>
             </dd>
             <dd>
