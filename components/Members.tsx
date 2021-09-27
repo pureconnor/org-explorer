@@ -4,17 +4,19 @@ import { useOrgMembers } from '../hooks'
 import { GitHubOrgLogin } from '../types'
 
 export interface MemberProps {
-  name: GitHubOrgLogin
+  login: GitHubOrgLogin
 }
 
-export const Members = ({ name }: MemberProps) => {
-  const members = useOrgMembers(name)
+export const Members = ({ login }: MemberProps) => {
+  const members = useOrgMembers(login)
+
+  console.log('members: ', members)
 
   return (
-    <div className="flex flex-row">
-      {members &&
-        members.slice(0, 10).map((member) => (
-          <div key={member.id} className="h-4 w-4 ">
+    <div className="flex flex-row flex-wrap">
+      {members && members.length > 0 ? (
+        members.slice(0, 50).map((member) => (
+          <div key={member.id} className="h-12 w-12 ">
             <Image
               className="rounded-full"
               src={member.avatar_url}
@@ -23,7 +25,10 @@ export const Members = ({ name }: MemberProps) => {
               alt="Org Member Avatar"
             />
           </div>
-        ))}
+        ))
+      ) : (
+        <h1>Looks like everyone left!</h1>
+      )}
     </div>
   )
 }

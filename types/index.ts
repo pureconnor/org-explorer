@@ -15,7 +15,7 @@ export type GitHubOrg = {
   public_repos: number
   blog: string
   avatar_url: string
-  description?: string
+  description: string | null
   is_verified?: boolean
   followers?: number
   following?: number
@@ -31,7 +31,9 @@ export type GitHubResponseError = {
 export type GitHubResponse = GitHubOrg[] &
   GitHubOrg &
   GitHubResponseError &
-  OrgMember[]
+  OrgMember[] &
+  Repository &
+  Repository[]
 
 export type OrgMember = {
   login?: string
@@ -52,4 +54,18 @@ export type OrgMember = {
   received_events_url?: string
   type?: string
   site_admin?: boolean
+}
+
+export type Repository = {
+  id: number
+  node_id: string
+  name: string
+  full_name: string
+  private: boolean
+  owner: GitHubOrg
+  description: string | null
+  languages_url: string
+  watchers: number
+  open_issues: number
+  forks: number
 }

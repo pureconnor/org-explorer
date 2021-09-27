@@ -31,7 +31,8 @@ const Discover: NextPage<DiscoverProps> = ({
           Discover Organizations
         </h1>
         <dd className="py-4 text-md text-sm md:text-xl w-full text-gray-400 tracking-wide">
-          There&apos;s plenty more where that came from.
+          There&apos;s &#91; infinitely &#x5d; more where
+          that came from.
         </dd>
       </dl>
       <div className="flex h-5/6 w-full ">

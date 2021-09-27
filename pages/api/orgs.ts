@@ -59,3 +59,19 @@ export const fetchOrgMembers = async (
 
   return data
 }
+
+export const getOrgRepositories = async (
+  login: GitHubOrgLogin
+): Promise<GitHubResponse> => {
+  const res = await fetch(
+    `${BASE_URL}/orgs/${login}/repos`,
+    options
+  )
+  const data = await res.json()
+
+  if (data.message) {
+    throw new Error(`Error: ${data.message}`)
+  }
+
+  return data
+}
