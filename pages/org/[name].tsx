@@ -7,6 +7,15 @@ import { Members } from '../../components/Members'
 import { useRepositories } from '../../hooks/useRepositories'
 import { RepositoryCard } from '../../components/RepositoryCard'
 
+/**
+ * @NOTE Improvements
+ * I could have made better use of the fallbacks and not found scenarios.
+ * These interim/edge states are not handled the best with this implementation.
+ *
+ * Wanted to make use of dynamic routing since it's optimized nicely by
+ * NextJS. We can prerender these routes to increase page load speed.
+ */
+
 export const getStaticProps: GetStaticProps<GitHubOrg> =
   async (context) => {
     const name = context.params?.name

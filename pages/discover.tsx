@@ -5,6 +5,15 @@ import { GitHubOrg } from '../types'
 import { DEFAULT_PER_PAGE, getOrgs } from './api/orgs'
 import { ListItem } from '../components/ListItem'
 
+/**
+ * @NOTE Improvements
+ * This one was a bit rushed to be honest. I used a 3rd party library here
+ * for infinite scrolling. I think this is probably okay for the purpose of
+ * this exercise, but I'm not sure this is what I would implement in
+ * production.
+ *
+ */
+
 interface DiscoverProps {
   orgs: GitHubOrg[]
 }

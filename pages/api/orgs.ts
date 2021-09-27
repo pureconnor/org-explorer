@@ -1,5 +1,16 @@
 import { GitHubOrgLogin, GitHubResponse } from '../../types'
 
+/**
+ * @NOTE Improvement
+ *
+ * I would like to have created a more roboust fetching framework here.
+ * At the very least I think there could be better error handling that doesn't
+ * crash the stack.
+ *
+ * Caching would be a nice option here as well especially due to the rate
+ * limit from GitHub API.
+ */
+
 const BASE_URL = 'https://api.github.com'
 
 const options = {

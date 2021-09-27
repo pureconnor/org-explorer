@@ -9,6 +9,18 @@ import dynamic from 'next/dynamic'
 import { getOrgs } from './api/orgs'
 import { Card } from '../components/Card'
 
+/**
+ * @NOTE Improvements
+ * This a bit cluttered due to the styles. I'd like to
+ * improve upon the verbosity of the styles here by adding custom theme
+ * properties inside of the tailwindcss configuration
+ *
+ * Strategy here was to create some meaningful ( albeit slightly ) static
+ * content to assist with FCP and get heavier components to render dynamically
+ * below the fold.
+ *
+ */
+
 interface HomePageProps {
   orgs: GitHubOrg[]
 }

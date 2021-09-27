@@ -1,3 +1,12 @@
+/**
+ * @NOTE Improvement
+ *
+ * Some of these types are maybe not totally 1:1 with the reponse(s) from the
+ * REST API. I made some quick types to access some properties I thought I may
+ * need in advance. I wasn't able to discern from the Reference documentation
+ * which properties were optional. Some I was able to deduce after general
+ * development and debugging/logging
+ */
 export type GitHubOrg = {
   login?: string
   id: number
